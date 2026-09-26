@@ -1,17 +1,17 @@
 workflows:
   android-debug:
-      name: بناء APK تجريبي (Debug)
+      name: Android Debug Build
           max_build_duration: 30
               environment:
                     flutter: stable
                         scripts:
-                              - name: توليد ملفات أندرويد الناقصة
+                              - name: Generate missing android files
                                       script: |
                                                 flutter create --platforms=android .
-                                                      - name: تحميل الحزم
+                                                      - name: Get packages
                                                               script: |
                                                                         flutter pub get
-                                                                              - name: بناء APK
+                                                                              - name: Build APK
                                                                                       script: |
                                                                                                 flutter build apk --debug
                                                                                                     artifacts:
